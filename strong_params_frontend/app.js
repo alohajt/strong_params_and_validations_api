@@ -69,6 +69,34 @@ document.addEventListener("DOMContentlLoaded", () => {
     }
 
     function editUserInfo(user){
-        console.log(user)
+        const editUserInfo = document.createElement('form')
+        const nameInput = document.createElement('input')
+        const usernameInput = document.createElement('input')
+        const emailInput = document.createElement('input')
+        const passwordInput = document.createElement('input')
+        const editUserButton = document.createElement('button')
+
+        nameInput.name = "name"
+        nameInput.placeholder = user.name
+        usernameInput.name = "username"
+        usernameInput.placeholder = user.username
+        emailInput.name = "email"
+        emailInput.placeholder = user.email
+        passwordInput.name = "password"
+        passwordInput.placeholder = "we didn't save your raw text password"
+
+        editUserButton.innerText = "update user info"
+        editUserButton.type = "submit"
+
+        editUserForm.append(nameInput, usernameInput, emailInput, passwordInput, editUserButton)
+        editUserForm.addEventListener('submit', () => {
+            event.preventDefault()
+            console.log('user updated')
+        })
+        formSection.append(editUserForm)
+    }
+
+    function patchUserInfo(){
+        const formdat
     }
 })
